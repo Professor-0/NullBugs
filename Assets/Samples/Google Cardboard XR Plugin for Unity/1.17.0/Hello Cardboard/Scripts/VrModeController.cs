@@ -21,6 +21,7 @@ using Google.XR.Cardboard;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Management;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Turns VR mode on and off.
@@ -91,6 +92,8 @@ public class VrModeController : MonoBehaviour
             if (Api.IsCloseButtonPressed)
             {
                 ExitVR();
+                SceneManager.LoadScene(sceneName: "Ui");
+
             }
 
             if (Api.IsGearButtonPressed)

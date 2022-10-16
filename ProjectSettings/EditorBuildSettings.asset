@@ -8,11 +8,17 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scenes/HelloCardboard.unity
     guid: 145a2a45d7bc746b19cb68410368bf96
   - enabled: 0
     path: Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scenes/VrMode.unity
     guid: 4812ec05e87b8414abcdfe0d625c0e60
+  - enabled: 1
+    path: Assets/Ui.unity
+    guid: 3385f28b8fa318543aa2fd0da9259a4c
+  - enabled: 1
+    path: Assets/VR.unity
+    guid: 0cfbc2a112dd61d4c8df8f59bf31b46e
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7baf6f957e2ad3e3eb84d2b8b19ff35f, type: 2}

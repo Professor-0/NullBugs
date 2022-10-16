@@ -382,6 +382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013165000468, guid: c43602d5712fe4fd4bf33173bb6b8e26, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000014274899290, guid: c43602d5712fe4fd4bf33173bb6b8e26, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -442,7 +446,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1799306721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd68f027e715c44aa8d097000d4cccfb, type: 3}
+  m_Script: {fileID: 11500000, guid: f478d43f27e324b7199d5dccff4298b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1972640156
@@ -458,6 +462,7 @@ GameObject:
   - component: {fileID: 1972640159}
   - component: {fileID: 1972640158}
   - component: {fileID: 1972640157}
+  - component: {fileID: 1972640162}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -554,3 +559,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1972640162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972640156}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ddb1bacfde7474248b5d576cdc7e78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

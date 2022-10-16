@@ -25,16 +25,12 @@ public class VideoScript : MonoBehaviour
 		
 		// Set the video to play. URL supports local absolute or relative paths.
 		// Here, using absolute.
-		videoPlayer.url = "Assets/lol.ogv";
+		videoPlayer.url = "https://unity-youtube-dl-server.herokuapp.com/watch?v=1PuGuqpHQGo&cli=yt-dlp";
 		
-		// Skip the first 100 frames.
-		videoPlayer.frame = 100;
 		
 		// Restart from beginning when done.
 		videoPlayer.isLooping = true;
-		
-		// Each time we reach the end, we slow down the playback by a factor of 10.
-		videoPlayer.loopPointReached += EndReached;
+		;
 		
 		// Start playback. This means the VideoPlayer may have to prepare (reserve
 		// resources, pre-load a few frames, etc.). To better control the delays
@@ -43,8 +39,4 @@ public class VideoScript : MonoBehaviour
 		videoPlayer.Play();
 	}
 	
-	void EndReached(UnityEngine.Video.VideoPlayer vp)
-	{
-		vp.playbackSpeed = vp.playbackSpeed / 10.0F;
-	}
 }
