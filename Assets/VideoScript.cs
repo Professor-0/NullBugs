@@ -21,11 +21,11 @@ public class VideoScript : MonoBehaviour
 		videoPlayer.renderMode = UnityEngine.Video.VideoRenderMode.MaterialOverride;
 		
 		// This will cause our Scene to be visible through the video being played.
-		videoPlayer.targetCameraAlpha = 0.5F;
+		videoPlayer.targetCameraAlpha = 1F;
 		
 		// Set the video to play. URL supports local absolute or relative paths.
 		// Here, using absolute.
-		videoPlayer.url = "https://unity-youtube-dl-server.herokuapp.com/watch?v=1PuGuqpHQGo&cli=yt-dlp";
+		videoPlayer.url = "https://unity-youtube-dl-server.herokuapp.com/watch?v=Xi8An7NzUTw&cli=yt-dlp";
 		
 		
 		// Restart from beginning when done.

@@ -80,7 +80,6 @@ public class VrModeController : MonoBehaviour
         {
             Api.ScanDeviceParams();
         }
-        EnterVR();
     }
 
     /// <summary>
@@ -106,11 +105,7 @@ public class VrModeController : MonoBehaviour
         }
         else
         {
-            // TODO(b/171727815): Add a button to switch to VR mode.
-            if (_isScreenTouched)
-            {
-                EnterVR();
-            }
+            EnterVR();
         }
     }
 
