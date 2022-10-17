@@ -17,7 +17,6 @@
 //-----------------------------------------------------------------------
 
 using System.Collections;
-using System.Collections.Generic;
 using Google.XR.Cardboard;
 using UnityEngine;
 using UnityEngine.XR;
@@ -27,7 +26,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// Turns VR mode on and off.
 /// </summary>
-public class VrController : MonoBehaviour
+public class VrModeController : MonoBehaviour
 {
     // Field of view value to be used when the scene is not in VR mode. In case
     // XR isn't initialized on startup, this value could be taken from the main
@@ -36,9 +35,6 @@ public class VrController : MonoBehaviour
 
     // Main camera from the scene.
     private Camera _mainCamera;
-
-    UnityEngine.XR.XRInputSubsystem xrInput = null;
-    
 
     /// <summary>
     /// Gets a value indicating whether the screen has been touched this frame.
@@ -84,8 +80,7 @@ public class VrController : MonoBehaviour
         {
             Api.ScanDeviceParams();
         }
-        
-
+        EnterVR();
     }
 
     /// <summary>
@@ -105,11 +100,6 @@ public class VrController : MonoBehaviour
             if (Api.IsGearButtonPressed)
             {
                 Api.ScanDeviceParams();
-            }
-            
-            if (_isScreenTouched)
-            {
-                xrInput.TryRecenter();
             }
 
             Api.UpdateScreenParams();
@@ -169,8 +159,6 @@ public class VrController : MonoBehaviour
             XRGeneralSettings.Instance.Manager.StartSubsystems();
             Debug.Log("XR started.");
         }
-
-        GetXRSubsystems();
     }
 
     /// <summary>
@@ -189,51 +177,5 @@ public class VrController : MonoBehaviour
 
         _mainCamera.ResetAspect();
         _mainCamera.fieldOfView = _defaultFieldOfView;
-    }
-
-    private void GetXRSubsystems()
-    {
-        var xrSettings = XRGeneralSettings.Instance;
-        if (xrSettings == null)
-        {
-            Debug.Log($"XRGeneralSettings is null.");
-            return;
-        }
-
-        var xrManager = xrSettings.Manager;
-        if (xrManager == null)
-        {
-            Debug.Log($"XRManagerSettings is null.");
-            return;
-        }
-
-        var xrLoader = xrManager.activeLoader;
-        if (xrLoader == null)
-        {
-            Debug.Log($"XRLoader is null.");
-            return;
-        }
-
-        Debug.Log($"Loaded XR Device: {xrLoader.name}");
-
-        var xrDisplay = xrLoader.GetLoadedSubsystem<XRDisplaySubsystem>();
-        Debug.Log($"XRDisplay: {xrDisplay != null}");
-
-        if (xrDisplay != null)
-        {
-            if (xrDisplay.TryGetDisplayRefreshRate(out float refreshRate))
-            {
-                Debug.Log($"Refresh Rate: {refreshRate}hz");
-            }
-        }
-
-        xrInput = xrLoader.GetLoadedSubsystem<XRInputSubsystem>();
-        Debug.Log($"XRInput: {xrInput != null}");
-
-        if (xrInput != null)
-        {
-            xrInput.TrySetTrackingOriginMode(TrackingOriginModeFlags.Device);
-            xrInput.TryRecenter();
-        }
     }
 }

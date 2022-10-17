@@ -1,0 +1,34 @@
+{
+    "name": "controller",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "b6e44ca9-4388-4664-9312-be2e7036d4fd",
+            "actions": [
+                {
+                    "name": "Show Text",
+                    "type": "Button",
+                    "id": "0380e77b-e4d6-4970-805b-087c7e51ff01",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c0d20621-4455-46c1-9a41-10d01a2b560d",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Show Text",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
