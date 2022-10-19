@@ -1,5 +1,8 @@
 # NullBugs
 
+## Device
+An android device with Android 7 or higher and USB debugging enabled is required (see [here](https://developer.android.com/studio/debug/dev-options)). 
+
 ## Installation
 
 Android Debug Bridge is required for installation
